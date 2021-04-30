@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { AuthActions } from '@actions';
-import { ActivityIndicator } from 'react-native-paper';
+import { ActivityIndicator } from 'react-native';
 import { WebView } from 'react-native-webview';
 import { UserServices } from '../../services';
 import { View, StatusBar, ScrollView, TouchableOpacity } from 'react-native';
