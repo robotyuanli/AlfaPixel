@@ -1,0 +1,15 @@
+export const Hebrew = {
+  GO_UP: 'חזרה למעלה',
+  ENTER_KEY: 'חיפוש חופשי',
+  SETTINGS: 'הגדרות',
+  NOTIFICATION: 'התראות',
+  SHOW_HIDE: 'קבל / בטל',
+  LANGUAGE: 'שפה',
+  ENGLISH: 'עברית',
+  TERMS_OF_USE: 'תקנון האפליקציה ותנאי שימוש',
+  PRIVACY_POLICY: 'מדיניות פרטיות',
+  CONTACT_US: 'צור קשר',
+  ADDRESS: 'צרו עמנו קשר בכל שאלה, אנו זמינים בווצאפ: 050000000',
+  EMAIL: 'ובמייל: torah4u@gmail.com',
+  END: 'תודה',
+};
