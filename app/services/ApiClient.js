@@ -3,7 +3,7 @@ import { store } from '../store';
 import { AuthActions } from '../actions';
 
 const ApiClient = axios.create({
-  baseURL: 'http://www.tora.patrioti.co.il/api/',
+  baseURL: 'http://www.torah4u.co.il/api/',
   headers: {
     Accept: 'application/json',
     'Content-Type': 'application/json',
