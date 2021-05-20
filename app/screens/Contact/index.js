@@ -18,7 +18,7 @@ class Contact extends Component {
   }
 
   goUp = () => {
-    this.refs._scrollView.scrollTo({
+    this.refs?._scrollView?.scrollTo({
       y: 0,
       animated: true,
     });
@@ -35,8 +35,7 @@ class Contact extends Component {
     return (
       <>
         <SafeAreaView
-          style={BaseStyle.safeAreaView}
-          forceInset={{ top: 'never' }}>
+          style={BaseStyle.safeAreaView}>
           <View style={styles.header}>
             <Header navigation={navigation} main={false} onBack={null} />
           </View>

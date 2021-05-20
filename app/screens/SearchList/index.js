@@ -64,8 +64,7 @@ class SearchList extends Component {
 
     return (
       <SafeAreaView
-        style={BaseStyle.safeAreaView}
-        forceInset={{ top: 'never' }}>
+        style={BaseStyle.safeAreaView}>
         <View style={styles.header}>
           <Header
             navigation={navigation}

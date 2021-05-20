@@ -78,7 +78,7 @@ class Landing extends Component {
   }
 
   goUp = () => {
-    this.refs._scrollView.scrollTo({
+    this.refs?._scrollView?.scrollTo({
       y: 0,
       animated: true,
     });
@@ -156,8 +156,7 @@ class Landing extends Component {
 
     return (
       <SafeAreaView
-        style={BaseStyle.safeAreaView}
-        forceInset={{ top: 'never' }}>
+        style={BaseStyle.safeAreaView}>
         <StatusBar
           hidden={false}
           barStyle={'dark-content'}
