@@ -43,6 +43,7 @@ class DrawerContent extends Component {
         <DrawerContentScrollView {...this.props}>
           <DrawerItem
             label={Hebrew.TERMS_OF_USE}
+            labelStyle={styles.itemTitle}
             onPress={() => {
               this.props.authActions.setStatus(true);
               navigation.navigate('Terms');
@@ -51,6 +52,7 @@ class DrawerContent extends Component {
           />
           <DrawerItem
             label={Hebrew.PRIVACY_POLICY}
+            labelStyle={styles.itemTitle}
             onPress={() => {
               this.props.authActions.setStatus(true);
               navigation.navigate('Policy');
@@ -59,6 +61,7 @@ class DrawerContent extends Component {
           />
           <DrawerItem
             label={Hebrew.CONTACT_US}
+            labelStyle={styles.itemTitle}
             onPress={() => {
               this.props.authActions.setStatus(true);
               navigation.navigate('Contact');

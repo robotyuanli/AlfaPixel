@@ -14,7 +14,7 @@ export default StyleSheet.create({
     marginHorizontal: 10,
     borderColor: BaseColor.textSecondaryColor,
     borderWidth: 1,
-    flexDirection: 'row-reverse',
+    flexDirection: 'row',
     alignItems: 'center',
     borderRadius: 10,
     flex: 1,

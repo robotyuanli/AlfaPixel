@@ -153,6 +153,15 @@ class Landing extends Component {
       showSearchBar,
       categoryList,
     } = this.state;
+    let result = [];
+    if(keyValue !== '')
+        result = categoryList;
+    else {
+        if(categoryList.children?.length > 0)
+            result = categoryList.children;
+        if(categoryList.reports?.length > 0)
+            result = categoryList.reports;
+    }
 
     return (
       <SafeAreaView
@@ -179,7 +188,7 @@ class Landing extends Component {
             />
           )}
         </View>
-        <ScrollView ref="_scrollView" style={styles.scrollView}>
+        <ScrollView ref="_scrollView">
           <View style={styles.container}>
             {loading ? (
               <ActivityIndicator
@@ -265,20 +274,18 @@ class Landing extends Component {
               </View>
             )}
           </View>
-          {!(loading || (!adsShow && keyValue !== '' && categoryList.length < 3)) && 
+          {!loading && (adsShow || (!adsShow && result.length > 2)) &&
             <Footer
-              style={styles.footer}
               goUp={this.goUp}
               navigation={navigation}
             />
           }
         </ScrollView>
-        {(loading || (!adsShow && keyValue !== '' && categoryList.length < 3)) && 
-          <Footer
-            style={styles.footer}
-            goUp={this.goUp}
-            navigation={navigation}
-          />
+        {(loading || (!adsShow && result.length < 3)) && 
+            <Footer
+                goUp={this.goUp}
+                navigation={navigation}
+            />
         }
       </SafeAreaView>
     );

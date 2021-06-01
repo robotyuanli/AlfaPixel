@@ -5,7 +5,7 @@ import { BaseColor } from '@config';
 export default StyleSheet.create({
     header: {
         display:'flex',
-        flexDirection: 'row-reverse',
+        flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',
         backgroundColor: '#f3f3f5',
@@ -16,11 +16,13 @@ export default StyleSheet.create({
         fontSize: 40,
         color: '#828282',
         fontWeight: 'bold',
+        textAlign: 'left',
     },
     subTitle: {
         marginTop: 20,
         fontSize: 18,
         fontWeight: 'bold',
+        textAlign: 'left',
     },
     closeIcon: {
       padding: 20,

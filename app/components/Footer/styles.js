@@ -29,7 +29,7 @@ export default StyleSheet.create({
   },
   upButton: {
     display:'flex',
-    flexDirection: 'row-reverse',
+    flexDirection: 'row',
     borderRadius: 20,
     backgroundColor: BaseColor.whiteColor,
     borderColor: BaseColor.orangeColor,

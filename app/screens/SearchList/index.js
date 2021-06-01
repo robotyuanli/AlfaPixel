@@ -2,10 +2,12 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { AuthActions } from '@actions';
-import { View, ScrollView } from 'react-native';
-import { BaseStyle } from '@config';
-import { SafeAreaView, Article, Header, Footer, Carousel } from '@components';
+import { View, ScrollView, TouchableOpacity } from 'react-native';
+import { WebView } from 'react-native-webview';
+import { BaseStyle, BaseColor } from '@config';
+import { SafeAreaView, Icon, Article, Header, Footer, Carousel } from '@components';
 import styles from './styles';
+import { ads } from '../../../app.json';
 
 class SearchList extends Component {
   constructor(props) {
@@ -54,6 +56,7 @@ class SearchList extends Component {
   render() {
     const { categoryList, uniqueValue, position } = this.state;
     const { navigation, auth } = this.props;
+    const adsShow = auth.adsShow;
 
     let result = [], i;
     const length = categoryList.length;
@@ -73,14 +76,34 @@ class SearchList extends Component {
           />
         </View>
         <ScrollView ref="_scrollView">
+        {adsShow && 
+            <>
+              <TouchableOpacity onPress={this.onClose}>
+                <Icon
+                    style={styles.closeIcon}
+                    name="times"
+                    size={30}
+                    color={BaseColor.textSecondaryColor}
+                />
+              </TouchableOpacity>
+              <WebView
+                ref={(ref) => { this.webview = ref; }}
+                style={{ height: 400 }}
+                source={{
+                    uri: ads,
+                }}
+              />
+            </>
+          }
           <Carousel
             index={0}
             key={uniqueValue}
             style={{height: 1000}}
             onIndexChanged={({ index, total }) => {
+              if(adsShow)
+                this.webview.reload();
               this.props.authActions.setStatus(true);
               this.setState({ slide: true });
-              this.goUp();
               if (Platform.OS === "ios") {
                 const page = index + 1;
                 AccessibilityInfo.announceForAccessibility(

@@ -530,8 +530,8 @@ export default class Carousel extends React.PureComponent<Props, State> {
         pointerEvents="box-none"
         style={controlsContainerStyle || defaultControlsContainerStyle}
       >
-        {this.renderNext()}
         {this.renderPrev()}
+        {this.renderNext()}
       </View>
     );
   };

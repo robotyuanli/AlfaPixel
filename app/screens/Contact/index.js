@@ -62,11 +62,19 @@ class Contact extends Component {
             <Text style={styles.subTitle}> {Hebrew.ADDRESS} </Text>
             <Text style={styles.subTitle}> {Hebrew.EMAIL} </Text>
             <Text style={styles.subTitle}> {Hebrew.END} </Text>
+            {adsShow  && 
+              <Footer
+                goUp={this.goUp}
+                navigation={navigation}
+              />
+            }
+          </ScrollView>
+          {!adsShow  && 
             <Footer
               goUp={this.goUp}
               navigation={navigation}
             />
-          </ScrollView>
+          }
         </SafeAreaView>
       </>
     );

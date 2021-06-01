@@ -58,8 +58,7 @@ class Settings extends Component {
     return (
       <>
         <SafeAreaView
-          style={BaseStyle.safeAreaView}
-          forceInset={{ top: 'never' }}>
+          style={BaseStyle.safeAreaView}>
           <View>
             <View style={styles.header}>
               <Icon

@@ -3,7 +3,7 @@ import { StyleSheet } from 'react-native';
 export default StyleSheet.create({
   header: {
     display:'flex',
-    flexDirection: 'row-reverse',
+    flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
     backgroundColor: '#f3f3f5',
@@ -18,10 +18,12 @@ export default StyleSheet.create({
     fontSize: 40,
     color: '#828282',
     fontWeight: 'bold',
+    textAlign: 'left',
   },
   subTitle: {
     fontSize: 20,
     fontWeight: 'bold',
+    textAlign: 'left',
   },
   closeIcon: {
     padding: 20,
@@ -29,5 +31,6 @@ export default StyleSheet.create({
   },
   policy: {
     fontSize: 20,
+    textAlign: 'left',
   },
 });

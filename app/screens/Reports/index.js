@@ -54,7 +54,6 @@ class Reports extends Component {
   }
 
   onBack = () => {
-    this.goUp();
     this.setState({ slide: false, backClick: true });
   }
 
@@ -110,7 +109,6 @@ class Reports extends Component {
                 this.webview.reload();
               this.props.authActions.setStatus(true);
               this.setState({ slide: true });
-              this.goUp();
               if (Platform.OS === "ios") {
                 const page = index + 1;
                 AccessibilityInfo.announceForAccessibility(

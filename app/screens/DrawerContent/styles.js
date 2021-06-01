@@ -25,6 +25,9 @@ export default StyleSheet.create({
     marginLeft: 10,
     width: 30,
   },
+  itemTitle: {
+    textAlign: 'right',
+  },
   versionContainer: {
     display:'flex',
     flexDirection: 'row',

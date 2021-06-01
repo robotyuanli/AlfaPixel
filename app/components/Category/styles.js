@@ -34,7 +34,7 @@ export default StyleSheet.create({
   },
   rest: {
     display:'flex',
-    flexDirection: 'row-reverse',
+    flexDirection: 'row',
   },
   detail: {
     flex: 1,

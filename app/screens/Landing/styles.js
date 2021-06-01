@@ -4,7 +4,7 @@ import { BaseColor } from '@config';
 export default StyleSheet.create({
   header: {
     display:'flex',
-    flexDirection: 'row-reverse',
+    flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
     backgroundColor: '#f3f3f5',
@@ -13,9 +13,6 @@ export default StyleSheet.create({
   },
   searchIcon: {
     paddingHorizontal: 20,
-  },
-  scrollView: {
-    backgroundColor: BaseColor.whiteColor,
   },
   container: {
     display: 'flex',
@@ -29,9 +26,6 @@ export default StyleSheet.create({
   },
   closeIcon: {
     padding: 20,
-    alignSelf: 'flex-end',
-  },
-  footer: {
     alignSelf: 'flex-end',
   },
 });

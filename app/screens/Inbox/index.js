@@ -34,8 +34,7 @@ class Inbox extends Component {
 
     return (
       <SafeAreaView
-        style={BaseStyle.safeAreaView}
-        forceInset={{ top: 'never' }}>
+        style={BaseStyle.safeAreaView}>
         <View style={styles.contain}>
           <ScrollView>
             <Message circleStyle={styles.circle} isRead={false} />
