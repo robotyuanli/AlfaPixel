@@ -40,6 +40,7 @@ export function renderWebview(content) {
       automaticallyAdjustContentInsets={false}
       javaScriptEnabled={true}
       injectedJavaScript="window.ReactNativeWebView.postMessage(document.body.scrollHeight)"
+      scrollEnabled={false}
     />
   );
 }
