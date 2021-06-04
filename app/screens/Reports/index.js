@@ -109,12 +109,6 @@ class Reports extends Component {
                 this.webview.reload();
               this.props.authActions.setStatus(true);
               this.setState({ slide: true });
-              if (Platform.OS === "ios") {
-                const page = index + 1;
-                AccessibilityInfo.announceForAccessibility(
-                  `Changed to page ${page}/${total}`
-                );
-              }
             }}
           >
             { result.map((item, index) => <Article key={index} picture={item.images[0].url} title={item.title} data={item.data} />) }
