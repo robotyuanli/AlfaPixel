@@ -49,6 +49,7 @@ class DrawerContent extends Component {
               navigation.navigate('Terms');
             }}
             activeTintColor={BaseColor.lightPrimaryColor}
+            style={{alignItems: 'flex-end'}}
           />
           <DrawerItem
             label={Hebrew.PRIVACY_POLICY}
@@ -58,6 +59,7 @@ class DrawerContent extends Component {
               navigation.navigate('Policy');
             }}
             activeTintColor={BaseColor.lightPrimaryColor}
+            style={{alignItems: 'flex-end'}}
           />
           <DrawerItem
             label={Hebrew.CONTACT_US}
@@ -67,6 +69,7 @@ class DrawerContent extends Component {
               navigation.navigate('Contact');
             }}
             activeTintColor={BaseColor.lightPrimaryColor}
+            style={{alignItems: 'flex-end'}}
           />
           {/* <DrawerItem
             label={Hebrew.SETTINGS}
