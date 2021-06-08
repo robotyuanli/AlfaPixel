@@ -14,9 +14,10 @@ export default StyleSheet.create({
   },
   title: {
     marginLeft: 20,
+    marginRight: 20,
     fontSize: 20,
     fontWeight: 'bold',
-    textAlign: 'left',
+    textAlign: 'right',
   },
   center_title: {
     fontSize: 20,
@@ -34,7 +35,7 @@ export default StyleSheet.create({
   },
   rest: {
     display:'flex',
-    flexDirection: 'row',
+    flexDirection: 'row-reverse',
   },
   detail: {
     flex: 1,

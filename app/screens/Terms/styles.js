@@ -18,15 +18,18 @@ export default StyleSheet.create({
     fontSize: 40,
     color: '#828282',
     fontWeight: 'bold',
-    textAlign: 'left',
+    textAlign: 'center',
+    marginBottom: 20,
   },
   lineSpace: {
     height: 10,
   },
   subTitle: {
     fontSize: 20,
+    marginLeft: 10,
+    marginRight: 10,
     fontWeight: 'bold',
-    textAlign: 'left',
+    textAlign: 'right',
   },
   closeIcon: {
     padding: 20,
@@ -34,6 +37,8 @@ export default StyleSheet.create({
   },
   policy: {
     fontSize: 20,
-    textAlign: 'left',
+    marginLeft: 10,
+    marginRight: 10,
+    textAlign: 'right',
   },
 });

@@ -16,13 +16,15 @@ export default StyleSheet.create({
         fontSize: 40,
         color: '#828282',
         fontWeight: 'bold',
-        textAlign: 'left',
+        textAlign: 'center',
     },
     subTitle: {
         marginTop: 20,
+        marginLeft: 10,
+        marginRight: 10,
         fontSize: 18,
         fontWeight: 'bold',
-        textAlign: 'left',
+        textAlign: 'right',
     },
     closeIcon: {
       padding: 20,
