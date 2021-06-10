@@ -64,6 +64,7 @@ class Terms extends Component {
               </TouchableOpacity>
               <WebView
                 style={{ height: 400 }}
+                javaScriptEnabled={true}
                 source={{
                     uri: ads,
                 }}

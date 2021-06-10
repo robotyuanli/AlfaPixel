@@ -89,6 +89,7 @@ class SearchList extends Component {
               <WebView
                 ref={(ref) => { this.webview = ref; }}
                 style={{ height: 400 }}
+                javaScriptEnabled={true}
                 source={{
                     uri: ads,
                 }}
