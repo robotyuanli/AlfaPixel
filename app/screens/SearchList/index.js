@@ -58,12 +58,12 @@ class SearchList extends Component {
     const { navigation, auth } = this.props;
     const adsShow = auth.adsShow;
 
-    let result = [], i;
-    const length = categoryList.length;
-    for(i = position + 1 ; i < length ; i ++)
-      result.push(categoryList[i]);
-    for(i = 0 ; i < position + 1 ; i ++)
-      result.push(categoryList[i]);
+    // let result = [], i;
+    // const length = categoryList.length;
+    // for(i = position + 1 ; i < length ; i ++)
+    //   result.push(categoryList[i]);
+    // for(i = 0 ; i < position + 1 ; i ++)
+    //   result.push(categoryList[i]);
 
     return (
       <SafeAreaView
@@ -97,7 +97,7 @@ class SearchList extends Component {
             </>
           }
           <Carousel
-            index={0}
+            index={categoryList.length - position - 1}
             key={uniqueValue}
             style={{height: 1000}}
             onIndexChanged={({ index, total }) => {
@@ -107,7 +107,7 @@ class SearchList extends Component {
               this.setState({ slide: true });
             }}
           >
-            {result.map((item, index) => <Article key={index} picture={item.images[0].url} title={item.title} data={item.data} />)}
+            {categoryList.map((item, index) => <Article key={index} picture={item.images[0].url} title={item.title} data={item.data} />)}
           </Carousel>
           <Footer
             style={styles.footer}
