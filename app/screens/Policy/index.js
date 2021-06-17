@@ -56,6 +56,7 @@ class Policy extends Component {
                 />
               </TouchableOpacity>
               <WebView
+                useWebKit={true}
                 style={{ height: 400 }}
                 javaScriptEnabled={true}
                 source={{

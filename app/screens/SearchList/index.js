@@ -87,6 +87,7 @@ class SearchList extends Component {
                 />
               </TouchableOpacity>
               <WebView
+                useWebKit={true}
                 ref={(ref) => { this.webview = ref; }}
                 style={{ height: 400 }}
                 javaScriptEnabled={true}
@@ -97,7 +98,7 @@ class SearchList extends Component {
             </>
           }
           <Carousel
-            index={categoryList.length - position - 1}
+            index={position}
             key={uniqueValue}
             style={{height: 1000}}
             onIndexChanged={({ index, total }) => {

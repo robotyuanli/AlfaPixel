@@ -91,6 +91,7 @@ class Reports extends Component {
                 />
               </TouchableOpacity>
               <WebView
+                useWebKit={true}
                 ref={(ref) => { this.webview = ref; }}
                 style={{ height: 400 }}
                 javaScriptEnabled={true}
@@ -101,7 +102,7 @@ class Reports extends Component {
             </>
           }
           <Carousel
-            index={reports.length - position - 1}
+            index={position}
             key={uniqueValue}
             style={{height: 1000}}
             ref={carousel => { this._carousel = carousel; }}
