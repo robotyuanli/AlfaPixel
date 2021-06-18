@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { AuthActions } from '@actions';
 import { WebView } from 'react-native-webview';
-import { View, BackHandler, ScrollView, TouchableOpacity } from 'react-native';
+import { View, BackHandler, ScrollView, TouchableOpacity, Linking } from 'react-native';
 import { BaseStyle, Hebrew, BaseColor } from '@config';
 import { SafeAreaView, Header, Text, Footer, Icon } from '@components';
 import styles from './styles';
@@ -64,10 +64,17 @@ class Terms extends Component {
               </TouchableOpacity>
               <WebView
                 useWebKit={true}
+                ref={(ref) => { this.webview = ref; }}
                 style={{ height: 400 }}
                 javaScriptEnabled={true}
                 source={{
                     uri: ads,
+                }}
+                onNavigationStateChange={(event) => {
+                  if (event.url !== ads) {
+                    this.webview.stopLoading();
+                    Linking.openURL(event.url);
+                  }
                 }}
               />
             </>

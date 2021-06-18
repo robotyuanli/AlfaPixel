@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { AuthActions } from '@actions';
-import { ActivityIndicator } from 'react-native';
+import { ActivityIndicator, Linking } from 'react-native';
 import { WebView } from 'react-native-webview';
 import { UserServices } from '../../services';
 import { View, StatusBar, ScrollView, TouchableOpacity } from 'react-native';
@@ -210,10 +210,17 @@ class Landing extends Component {
                     </TouchableOpacity>
                     <WebView
                       useWebKit={true}
+                      ref={(ref) => { this.webview = ref; }}
                       style={{ height: 400 }}
                       javaScriptEnabled={true}
                       source={{
                           uri: ads,
+                      }}
+                      onNavigationStateChange={(event) => {
+                        if (event.url !== ads) {
+                          this.webview.stopLoading();
+                          Linking.openURL(event.url);
+                        }
                       }}
                     />
                   </>

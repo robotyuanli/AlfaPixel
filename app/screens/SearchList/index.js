@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { AuthActions } from '@actions';
-import { View, ScrollView, TouchableOpacity } from 'react-native';
+import { View, ScrollView, TouchableOpacity, Linking } from 'react-native';
 import { WebView } from 'react-native-webview';
 import { BaseStyle, BaseColor } from '@config';
 import { SafeAreaView, Icon, Article, Header, Footer, Carousel } from '@components';
@@ -93,6 +93,12 @@ class SearchList extends Component {
                 javaScriptEnabled={true}
                 source={{
                     uri: ads,
+                }}
+                onNavigationStateChange={(event) => {
+                  if (event.url !== ads) {
+                    this.webview.stopLoading();
+                    Linking.openURL(event.url);
+                  }
                 }}
               />
             </>

@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { AuthActions } from '@actions';
 import { WebView } from 'react-native-webview';
-import { View, ScrollView, BackHandler, TouchableOpacity } from 'react-native';
+import { View, ScrollView, BackHandler, TouchableOpacity, Linking } from 'react-native';
 import { BaseStyle, Hebrew, BaseColor } from '@config';
 import { SafeAreaView, Text, Header, Footer, Icon } from '@components';
 import styles from './styles';
@@ -57,10 +57,17 @@ class Policy extends Component {
               </TouchableOpacity>
               <WebView
                 useWebKit={true}
+                ref={(ref) => { this.webview = ref; }}
                 style={{ height: 400 }}
                 javaScriptEnabled={true}
                 source={{
                     uri: ads,
+                }}
+                onNavigationStateChange={(event) => {
+                  if (event.url !== ads) {
+                    this.webview.stopLoading();
+                    Linking.openURL(event.url);
+                  }
                 }}
               />
             </>
